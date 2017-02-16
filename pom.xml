@@ -12,6 +12,7 @@
         <module>observer</module>
         <module>singleton</module>
         <module>proxy</module>
+        <module>decorator</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
