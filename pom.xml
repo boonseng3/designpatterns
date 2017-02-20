@@ -18,6 +18,7 @@
         <module>adapter</module>
         <module>command</module>
         <module>iterator</module>
+        <module>facade</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
