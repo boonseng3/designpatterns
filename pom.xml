@@ -23,6 +23,7 @@
         <module>memento</module>
         <module>state</module>
         <module>builder</module>
+        <module>flyweight</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
