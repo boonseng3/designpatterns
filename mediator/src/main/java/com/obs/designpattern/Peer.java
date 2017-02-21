@@ -26,7 +26,7 @@ public class Peer implements Person {
     @Override
     public void notify(String msg) {
         this.message = msg;
-        System.out.println("msg = " + msg);
+        System.out.println(name + " gets message: " + msg);
     }
 
     public String getMessage() {
