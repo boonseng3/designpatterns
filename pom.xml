@@ -25,6 +25,7 @@
         <module>builder</module>
         <module>flyweight</module>
         <module>abstractfactory</module>
+        <module>mediator</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
