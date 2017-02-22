@@ -27,6 +27,7 @@
         <module>abstractfactory</module>
         <module>mediator</module>
         <module>prototype</module>
+        <module>chainofresponsbility</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
