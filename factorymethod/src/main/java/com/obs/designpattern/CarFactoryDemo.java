@@ -3,16 +3,20 @@ package com.obs.designpattern;
 /**
  * Created by ongbo on 2/20/2017.
  */
-public class CarFactoryImpl extends CarFactory {
-    @Override
+public class CarFactoryDemo {
     public Car build(String brand) {
+        CarFactory factory;
         switch (brand) {
             case "Toyota":
-                return new ToyotaCar();
+                factory = new ToyotaCarFactory();
+                break;
             case "Honda":
-                return new HondaCar();
+                factory = new HondaCarFactory();
+                break;
             default:
                 throw new RuntimeException("Unsupported brand");
         }
+
+        return factory.build();
     }
 }

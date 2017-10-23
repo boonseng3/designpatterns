@@ -10,12 +10,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class TestFactoryMethod {
     @Test
     public void testPattern() {
-        CarFactory factory = new CarFactoryImpl();
-        Car car1 = factory.build("Honda");
-        assertThat(car1).hasFieldOrPropertyWithValue("color", "Blue");
+        CarFactoryDemo app = new CarFactoryDemo();
+        Car car1 = app.build("Honda");
+        assertThat(car1).isInstanceOf(HondaCar.class)
+                .hasFieldOrPropertyWithValue("color", "Blue");
         assertThat(car1).hasFieldOrPropertyWithValue("model", "Stream");
-        Car car2 = factory.build("Toyota");
-        assertThat(car2).hasFieldOrPropertyWithValue("color", "Silver");
+        Car car2 = app.build("Toyota");
+        assertThat(car2).isInstanceOf(ToyotaCar.class)
+                .hasFieldOrPropertyWithValue("color", "Silver");
         assertThat(car2).hasFieldOrPropertyWithValue("model", "Jazz");
     }
 }
