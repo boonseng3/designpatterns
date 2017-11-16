@@ -4,7 +4,7 @@ package com.obs.designpattern;
  * Created by ongbo on 2/20/2017.
  */
 public class CarFactoryDemo {
-    public Car build(String brand) {
+    public Delivery build(String brand) {
         CarFactory factory;
         switch (brand) {
             case "Toyota":
@@ -17,6 +17,6 @@ public class CarFactoryDemo {
                 throw new RuntimeException("Unsupported brand");
         }
 
-        return factory.build();
+        return factory.deliver();
     }
 }

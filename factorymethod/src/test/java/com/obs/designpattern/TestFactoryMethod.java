@@ -2,6 +2,8 @@ package com.obs.designpattern;
 
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -11,13 +13,20 @@ public class TestFactoryMethod {
     @Test
     public void testPattern() {
         CarFactoryDemo app = new CarFactoryDemo();
-        Car car1 = app.build("Honda");
-        assertThat(car1).isInstanceOf(HondaCar.class)
+        Delivery delivery = app.build("Honda");
+        Car car = delivery.getCar();
+
+        assertThat(delivery.getDateOfDelivery()).isBeforeOrEqualTo(LocalDateTime.now());
+        assertThat(car).isInstanceOf(HondaCar.class)
                 .hasFieldOrPropertyWithValue("color", "Blue");
-        assertThat(car1).hasFieldOrPropertyWithValue("model", "Stream");
-        Car car2 = app.build("Toyota");
-        assertThat(car2).isInstanceOf(ToyotaCar.class)
+        assertThat(car).hasFieldOrPropertyWithValue("model", "Stream");
+
+        delivery = app.build("Toyota");
+        car = delivery.getCar();
+
+        assertThat(delivery.getDateOfDelivery()).isBeforeOrEqualTo(LocalDateTime.now());
+        assertThat(car).isInstanceOf(ToyotaCar.class)
                 .hasFieldOrPropertyWithValue("color", "Silver");
-        assertThat(car2).hasFieldOrPropertyWithValue("model", "Jazz");
+        assertThat(car).hasFieldOrPropertyWithValue("model", "Jazz");
     }
 }
